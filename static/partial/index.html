@@ -1,48 +1,52 @@
-<div class="loading" ng-show="loading">
-	
-</div>
-<div class="share-other" ng-show="sharing" ng-click="toggleShare()">
-	
-</div>
-<div class="title" ng-hide="tested">
-	<h2>测测你是哪种单身狗</h2>
-</div>
-<div class="result-text" ng-show="tested">
-	<div class="name-text" ng-bind="name+' 是一隻'"></div>
-	<div class="doggie-text" ng-bind="'单身'+doggie.name">单身{{doggie.name}}</div>
-	<div class="reason-text" ng-bind="doggie.reason"></div>
-</div>
-<div class="dog-image">
-	<img ng-src="{{image}}" alt="">	
-</div>
-<div class="input-wrapper" ng-hide="tested">
-	<div class="input">
-		<input ng-model="name" class="name form-control input-lg" type="text" placeholder="输入你的名字">
-		<button id="btn-submit" ng-click="getDog()" class="submit btn btn-warning">开始测试</button>
-	</div>	
-</div>
-<div class="buttons" ng-show="tested">
-	<div class="again">
-		<button ng-hide="$root.first" id="btn-again" class="btn btn-danger" ng-click="retest()">
-			再测一次
-		</button>
-		<button ng-show="$root.first" id="btn-again" class="btn btn-danger" ng-click="retest()">
-			我也要测
-		</button>
+<div class="wrapper col-md-4 col-md-offset-4" ng-class="loading? 'op' : ''" >
+	<div class="loading" ng-show="loading">
+		
 	</div>
-	<div class="share">
-		<button class="btn btn-success" ng-click="toggleShare()">
-			告诉基友
-		</button>
-	</div>	
-	<div style="clear:both"></div>
-</div>
-<hr ng-show="articles.length && tested">
-<div class="articles" ng-show="articles.length && tested">
-	<h4 style="text-align: center;">教你如何摆脱单身</h4>
-	<ul>
-		<li ng-repeat="a in articles">
-			<a ng-href="{{a.src}}" target="_blank">{{a.title}}</a>
-		</li>
-	</ul>
+	<div class="share-other" ng-show="sharing" ng-click="toggleShare()">
+		
+	</div>
+	<div class="title" ng-hide="tested">
+		<h2>测测你是哪种单身狗</h2>
+	</div>
+	<div class="result-text" ng-show="tested">
+		<div class="name-text" ng-bind="name+' 是一隻'"></div>
+		<div class="doggie-text" ng-bind="'单身'+doggie.name">单身{{doggie.name}}</div>
+		<div class="reason-text" ng-bind="doggie.reason"></div>
+	</div>
+	<div class="dog-image">
+		<img ng-src="{{image}}" alt="">	
+	</div>
+	<div class="input-wrapper" ng-hide="tested">
+		<div class="input">
+			<input ng-model="name" class="name form-control input-lg" type="text" placeholder="输入你的名字">
+			<button id="btn-submit" ng-click="getDog()" class="submit btn btn-warning">开始测试</button>
+		</div>	
+	</div>
+	<div class="buttons" ng-show="tested">
+		<div class="again">
+			<button ng-hide="$root.first" id="btn-again" class="btn btn-danger" ng-click="retest()">
+				再测一次
+			</button>
+			<button ng-show="$root.first" id="btn-again" class="btn btn-danger" ng-click="retest()">
+				我也要测
+			</button>
+		</div>
+		<div class="share">
+			<button class="btn btn-success" ng-click="toggleShare()">
+				告诉基友
+			</button>
+		</div>	
+		<div style="clear:both"></div>
+	</div>
+	<hr ng-show="articles.length && tested">
+	<div class="articles" ng-show="articles.length && tested">
+		<h4 style="text-align: center;">教你如何摆脱单身</h4>
+		<ul>
+			<li ng-repeat="a in articles">
+				<a ng-href="{{a.src}}" target="_blank">{{a.title}}</a>
+			</li>
+		</ul>
+	</div>			
+
+
 </div>

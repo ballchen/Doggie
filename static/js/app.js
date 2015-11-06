@@ -20,7 +20,7 @@ dogApp.config(['$stateProvider', '$urlRouterProvider', '$locationProvider',funct
 
 dogApp.controller('MainCtrl',['$scope', '$location', '$http','$stateParams', '$timeout', '$state', '$rootScope', function($scope, $location, $http, $stateParams, $timeout, $state, $rootScope){
 	$scope.tested = false;
-	$scope.image = 'img/doggie.gif';
+	$scope.image = ((data == true) ? 'img/單身狗/' + data.doggie.name + '.jpg' : 'img/doggie.gif');
 	$scope.loading = false;
 
 	$http.get('/api/articles').success(function(data){
@@ -32,12 +32,14 @@ dogApp.controller('MainCtrl',['$scope', '$location', '$http','$stateParams', '$t
 	}
 	if($state.current.name == "result" && $stateParams.name){
 		$scope.name = $stateParams.name;
+		$scope.loading = true;
 		$http.get('/api/single?name='+$scope.name).success(function(httpData){
 			$scope.loading = false;
 			$scope.image = 'img/單身狗/' + httpData.doggie.name + '.jpg';
 			$scope.doggie = httpData.doggie;
 			$scope.tested = true;
 		})
+
 	} else if($state.current.name && !$stateParams.name){
 		$state.go('index');
 	}

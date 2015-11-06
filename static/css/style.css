@@ -21,6 +21,7 @@
 	margin-bottom: 50px;
 	min-height: 500px;
 	border: solid 1px rgba(50,50,50,0.3);
+	transition: opacity 1s;
 }
 .title{
 	width: 100%;
@@ -81,7 +82,7 @@
 	position:absolute;
 	height: 100%;
 	width: 100%;
-	background: rgba(160,160,160, 0.5);
+	/*background: rgba(160,160,160, 0.5);*/
 	transition: opacity 0.3s;
 	opacity: 1;
 }
@@ -113,6 +114,10 @@
 }
 .articles.ng-hide{
 	margin-top: 50px;
+	opacity: 0;
+}
+.wrapper.op{
+	transition: opacity 1s;
 	opacity: 0;
 }
 
