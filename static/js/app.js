@@ -18,22 +18,6 @@ dogApp.config(['$stateProvider', '$urlRouterProvider', '$locationProvider',funct
 
 }]);
 
-dogApp.directive('imageonload', function() {
-    return {
-        restrict: 'A',
-      
-        link: function(scope, element) {
-          element.on('load', function() {
-            // Set visibility: true + remove spinner overlay
-              element.addClass('notload');
-          });
-          scope.$watch('ngSrc', function() {
-              element.removeClass('notload');
-          });
-        }
-    };
-});
-
 dogApp.controller('MainCtrl',['$scope', '$location', '$http','$stateParams', '$timeout', '$state', '$rootScope', function($scope, $location, $http, $stateParams, $timeout, $state, $rootScope){
 	$scope.tested = false;
 	$scope.image = ((data == true) ? 'img/單身狗/' + data.doggie.name + '.jpg' : '');
@@ -66,20 +50,21 @@ dogApp.controller('MainCtrl',['$scope', '$location', '$http','$stateParams', '$t
 		$scope.loading = true;
 
 		if(!$scope.name){
-			return alert('沒名字呀!');
+			alert('沒名字呀!');
 		}
-		$http.get('/api/single?name='+$scope.name).success(function(httpData){
-			$timeout(function(){
-				$scope.loading = false;
-				$scope.image = 'img/單身狗/' + httpData.doggie.name + '.jpg';
-				$scope.doggie = httpData.doggie;
-				$state.go('result', {name: $scope.name});
-				$scope.tested = true;
-				$rootScope.first = false;
-				
-			}, 500);	
-		})
-		
+		else{
+			$http.get('/api/single?name='+$scope.name).success(function(httpData){
+				$timeout(function(){
+					$scope.loading = false;
+					$scope.image = 'img/單身狗/' + httpData.doggie.name + '.jpg';
+					$scope.doggie = httpData.doggie;
+					$state.go('result', {name: $scope.name});
+					$scope.tested = true;
+					$rootScope.first = false;
+					
+				}, 500);	
+			})
+		}
 	}
 
 	$scope.retest = function(){
