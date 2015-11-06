@@ -75,16 +75,16 @@ router.get('/api/single',function* (){
 router.get('/api/articles', function*(){
    let articles =[ 
     {
-      title:'你假裝是我男朋友一下好嗎',
+      title:'你假装是我男朋友一下好吗',
       src: 'http://www.weibo.com/5729392133/D2jbyA7Pk?from=page_1005055729392133_profile&wvr=6&mod=weibotime&type=comment#_rnd1446697314887'
     },
     {title:'大四真的是老妹吗?',
       src: 'http://www.weibo.com/5729392133/D1GUf0rVX?from=page_1005055729392133_profile&wvr=6&mod=weibotime&type=comment#_rnd1446697322556'
     },
-    {title:'為什麼女生總抱怨男生沒時間陪',
+    {title:'为什麽女生总抱怨男生没时间陪',
       src: 'http://www.weibo.com/5729392133/D1ECgzf41?from=page_1005055729392133_profile&wvr=6&mod=weibotime&type=comment#_rnd1446697330939'
     },
-    {title:'她最愛的顏色',
+    {title:'她最爱的颜色',
       src: 'http://www.weibo.com/5729392133/D1wLXdpKm?from=page_1005055729392133_profile&wvr=6&mod=weibotime&type=comment#_rnd1446697335251'
     }
   ]
