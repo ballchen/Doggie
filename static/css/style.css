@@ -21,7 +21,7 @@
 	margin-bottom: 50px;
 	min-height: 500px;
 	border: solid 1px rgba(50,50,50,0.3);
-	transition: opacity 0.5s;
+	transition: opacity 0.3s;
 }
 .title{
 	width: 100%;
@@ -35,6 +35,7 @@
 .dog-image > img{
 	width: 80%;
 	padding: 10px;
+	opacity: 1;
 }
 .input-wrapper{
 	width: 100%;
@@ -60,8 +61,8 @@
 
 .buttons{
 	width: 100%;
-	padding: 10px;
-	margin-bottom: 5px;
+	padding-left: 10px;
+	padding-right: 10px;
 	min-height: 50px;
 }
 .buttons .again,
@@ -106,7 +107,7 @@
 }
 
 .articles{
-	margin-top: 30px;
+	margin-top: 15px;
 	transition: all 1s;
 }
 .articles ul{
@@ -117,7 +118,11 @@
 	opacity: 0;
 }
 .wrapper.op{
-	transition: opacity 0.5s;
+	transition: opacity 0.3s;
+	opacity: 0;
+}
+
+.notload{
 	opacity: 0;
 }
 .image.rnr{

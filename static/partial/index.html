@@ -14,8 +14,8 @@
 		<div class="reason-text" ng-bind="doggie.reason"></div>
 	</div>
 	<div class="dog-image">
-		<img class="image" ng-show="image" ng-src="{{image}}" alt="">	
-		<img class="image rnr" ng-hide="image || loading" src="img/doggie.png" alt="">	
+		<img imageonload class="image" ng-show="image" ng-src="{{image}}" alt="">	
+		<img imageonload class="image rnr" ng-hide="image || loading" ng-src="img/doggie.png" alt="">	
 	</div>
 	<div class="input-wrapper" ng-hide="tested">
 		<div class="input">

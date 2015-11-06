@@ -18,6 +18,22 @@ dogApp.config(['$stateProvider', '$urlRouterProvider', '$locationProvider',funct
 
 }]);
 
+dogApp.directive('imageonload', function() {
+    return {
+        restrict: 'A',
+      
+        link: function(scope, element) {
+          element.on('load', function() {
+            // Set visibility: true + remove spinner overlay
+              element.addClass('notload');
+          });
+          scope.$watch('ngSrc', function() {
+              element.removeClass('notload');
+          });
+        }
+    };
+});
+
 dogApp.controller('MainCtrl',['$scope', '$location', '$http','$stateParams', '$timeout', '$state', '$rootScope', function($scope, $location, $http, $stateParams, $timeout, $state, $rootScope){
 	$scope.tested = false;
 	$scope.image = ((data == true) ? 'img/單身狗/' + data.doggie.name + '.jpg' : '');
