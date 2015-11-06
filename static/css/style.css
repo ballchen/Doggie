@@ -105,6 +105,12 @@
 	transition: opacity 0.3s;
 	opacity: 0;
 }
+.share-other img{
+	position: absolute;
+	width: 200px;
+	right:20px;
+	top:10px;
+}
 
 .articles{
 	margin-top: 15px;
