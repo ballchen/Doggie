@@ -20,7 +20,7 @@ dogApp.config(['$stateProvider', '$urlRouterProvider', '$locationProvider',funct
 
 dogApp.controller('MainCtrl',['$scope', '$location', '$http','$stateParams', '$timeout', '$state', '$rootScope', function($scope, $location, $http, $stateParams, $timeout, $state, $rootScope){
 	$scope.tested = false;
-	$scope.image = ((data == true) ? 'img/單身狗/' + data.doggie.name + '.jpg' : 'img/doggie.gif');
+	$scope.image = ((data == true) ? 'img/單身狗/' + data.doggie.name + '.jpg' : '');
 	$scope.loading = false;
 
 	$http.get('/api/articles').success(function(data){
