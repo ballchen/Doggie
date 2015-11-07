@@ -21,7 +21,7 @@
 	margin-bottom: 50px;
 	min-height: 500px;
 	border: solid 1px rgba(50,50,50,0.3);
-	transition: opacity 0.3s;
+	transition: opacity 0.2s;
 }
 .title{
 	width: 100%;
@@ -29,8 +29,8 @@
 }
 .dog-image{
 	text-align: center;
+	vertical-align: middle;
 	width: 100%;
-	min-height: 320px;
 }
 .dog-image > img{
 	width: 80%;
@@ -124,7 +124,7 @@
 	opacity: 0;
 }
 .wrapper.op{
-	transition: opacity 0.3s;
+	transition: opacity 0.2s;
 	opacity: 0;
 }
 
